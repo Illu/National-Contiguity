@@ -1,5 +1,3 @@
-displayData();
-
 function displayData(){
   var url = 'https://raw.githubusercontent.com/DealPete/forceDirected/master/countries.json';
   var width = window.innerWidth;
@@ -38,23 +36,12 @@ function displayData(){
         tooltip.html(d.country)
           .style("left", d3.event.pageX + "px")
           .style("top", (d3.event.pageY - flagSize * 1.5) + "px");
-		  })
-		  .on("mouseout", function(d){
-			  tooltip.style("display", "none");
-		  })
-
+      })
+      .on("mouseout", function(d){ tooltip.style("display", "none"); })
       .call(d3.drag()
             .on("start", dragstarted)
             .on("drag", dragged)
             .on("end", dragended));
-
-//     node.append('title')
-//       .text(function(d){ return d.country; });
-
-//     var label = svg.selectAll('.mytext')
-//       .data(graph.nodes)
-//       .enter().append("text")
-// 			.text(function (d) { return ''; });
 
     simulation
       .nodes(graph.nodes)
@@ -73,9 +60,6 @@ function displayData(){
           .attr("cy", function(d) { return d.y; })
           .attr("x", function(d) { return d.x - flagSize / 2; })
           .attr("y", function(d) { return d.y - flagSize / 2; });
-
-      // label.attr("x", function(d){ return d.x; })
-      // .attr("y", function (d) {return d.y - 10; });
     }
   });
 
@@ -96,3 +80,5 @@ function displayData(){
     d.fy = null;
   }
 }
+
+displayData();
