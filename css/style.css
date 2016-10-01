@@ -1,0 +1,32 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto+Condensed';
+body {
+  background: #222;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+svg {
+  background: #333;
+  display: block;
+  margin: auto;
+}
+
+.title {
+  color: #ccc;
+  text-align: center;
+}
+
+.link {
+  stroke: #999;
+  stroke-opacity: 0.6;
+  stroke-width: 1px;
+}
+
+#name {
+  display: none;
+  padding: 5px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px #222;
+  position: absolute;
+  background-color: #222;
+  color: #ccc;
+}
